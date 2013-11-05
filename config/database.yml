@@ -3,7 +3,7 @@ development:
   adapter: postgresql
   encoding: unicode
   database: warlocks_development
-  pool: 5
+  pool: 20
   username: saasbook
 
 # Warning: The database defined as "test" will be erased and
@@ -13,5 +13,11 @@ test:
   adapter: postgresql
   encoding: unicode
   database: warlocks_test
-  pool: 5
+  pool: 20
   username: saasbook
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: warlocks_production
+  pool: 20
