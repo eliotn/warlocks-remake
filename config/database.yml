@@ -15,9 +15,3 @@ test:
   database: warlocks_test
   pool: 20
   username: saasbook
-
-production:
-  adapter: postgresql
-  encoding: unicode
-  database: warlocks_production
-  pool: 20
