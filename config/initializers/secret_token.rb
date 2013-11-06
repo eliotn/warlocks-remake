@@ -9,4 +9,19 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-WarlocksRemake::Application.config.secret_key_base = '375d692ef7d6f808e9d4defb13b0316792a18a9844290ad8830230d199b43521cce2bd13bdd226def150a2ccfdd05d30412dd066b4b88186db396200c7a87dc5'
+
+require 'securerandom'
+
+def secure_token
+  token_file = Rails.root.join('.secret')
+  if File.exist?(token_file)
+    #use the existing token
+    File.read(token_file).chomp
+  else
+    token = SecureRandom.hex(64)
+    File.write(token_file, token)
+    token
+  end
+end
+
+WarlocksRemake::Application.config.secret_key_base = secure_token

@@ -6,6 +6,8 @@ gem 'rails', '4.0.1'
 # Use postgres as the database for Active Record
 # It is better quality for our deployment
 gem 'pg'
+
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '4.0.1'
 
@@ -26,6 +28,14 @@ gem 'turbolinks', '1.1.1'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '1.0.2'
+
+group :test do
+  gem 'capybara', '2.1.0'
+end
+
+group :development, :test do
+  gem 'rspec-rails', '2.13.1'
+end
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
