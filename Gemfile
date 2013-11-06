@@ -29,6 +29,9 @@ gem 'turbolinks', '1.1.1'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '1.0.2'
 
+#to use the haml version of this html
+gem 'haml'
+
 group :test do
   gem 'capybara', '2.1.0'
 end
