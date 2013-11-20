@@ -11,3 +11,39 @@
  *= require_self
  *= require_tree .
  */
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #C3C3E5;
+  font-family: Tahoma, Verdana, sans-serif;
+  font-size: 10pt;
+}
+
+table#maintable {
+  width:100%;
+  background-color: #C3C3E5;
+}
+
+td#login {
+  text-align: right;
+}
+
+table#moves td {
+  font-family: courier, courier, courier;
+  font-size: 20pt;
+  margin: 0;
+  padding: 0;
+}
+
+table#moves td.paralysis {
+  color: green;
+}
+
+table#moves td.shieldcast {
+  color: blue;
+}
+
+table#moves td.spellcast {
+  border:solid 1px red;
+}
+

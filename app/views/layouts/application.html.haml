@@ -1,7 +1,29 @@
 %html
   %head
     %title Warlocks Remake
-  
+    = stylesheet_link_tag 'application'
+    = csrf_meta_tags
   %body
-    %h1.title Warlocks Remake!
-    =yield
+    %table#maintable
+      %tr
+        %td
+          = image_tag "logo.png"
+        %td#login
+          = label :player, :username, 'Username: '
+          = text_field :username, 'username'
+          %br
+          = label :player, :password, 'Password: '
+          = password_field :password, 'password'
+          %br
+          = submit_tag 'Login'
+          %br
+          = link_to 'Sign up for a new account', player_new_path
+      %tr
+        %td
+          = link_to 'Home', information_page_home_path
+          = link_to 'Games', game_index_path
+          = link_to 'Spell Reference', 'http://games.ravenblack.net/rules/1/quickref.html'
+        
+      %tr#body
+        %td
+          =yield

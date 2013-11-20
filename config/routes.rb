@@ -1,4 +1,14 @@
 WarlocksRemake::Application.routes.draw do
+  get "game/test"
+  post "game/test"
+  post "game/resettest"
+  get "spells/index"
+  get "player/new"
+  get "game/index"
+  get "game/show"
+  get "game/new"
+  resources :information_pages
+
   get "information_page/home"
   root "information_page#home"
   # The priority is based upon order of creation: first created -> highest priority.

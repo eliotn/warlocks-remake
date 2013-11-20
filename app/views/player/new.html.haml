@@ -1,0 +1,15 @@
+%h1 Register for an account
+%br
+=label :player, :username, "Username: "
+=text_field :username, 'username'
+%br
+=label :password, :password, 'Password: '
+=password_field :password, 'password'
+%br
+=label :retype_password, :retype_password, 'Retype Password: '
+=password_field :retype_password, 'retype_password'
+%br
+=label :email, :email, 'Email: '
+=text_field :email, 'email'
+%br
+=submit_tag 'Register'

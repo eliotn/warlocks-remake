@@ -1,0 +1,33 @@
+%h1 Play a game
+-[:player0, :player1].each do |player|
+  =player
+  %table#moves
+    %tr
+      - params[player][:left_hand].split("").each do |letter|
+        %td=letter
+    %tr
+      - params[player][:right_hand].split("").each do |letter|
+        %td=letter
+  %br
+
+=session[:player]
+=params[:move][:left_hand]
+=params[:move][:right_hand]
+%br
+test
+=params[:player1][:left_hand]
+=form_tag game_test_path do
+
+  ='Left Hand:'
+  = select :move, :left_hand, hand_move_list(:left_hand)
+  %br
+  ='Right Hand:'
+  = select :move, :right_hand, hand_move_list(:right_hand)
+  %br
+  =submit_tag "Submit move"
+
+
+=form_tag game_resettest_path do
+  =submit_tag "Reset game"
+
+

@@ -34,11 +34,15 @@ gem 'haml'
 
 group :test do
   gem 'capybara', '2.1.0'
+  gem 'cucumber-rails', '1.4.0', :require => false
+  gem 'database_cleaner', '1.2.0', :require => false
+  
 end
 
 group :development, :test do
-  gem 'rspec-rails', '2.13.1'
+  gem 'rspec-rails', '~> 2.0'
 end
+
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
