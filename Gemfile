@@ -7,7 +7,6 @@ gem 'rails', '4.0.1'
 # It is better quality for our deployment
 gem 'pg'
 
-
 # Use SCSS for stylesheets
 gem 'sass-rails', '4.0.1'
 

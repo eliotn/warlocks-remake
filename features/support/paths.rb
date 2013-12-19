@@ -14,8 +14,7 @@ module NavigationHelpers
     case page_name
 
     when /^the (Warlocks Remake )?home\s?page$/ then '/'
-    when /^the movies page$/ then '/movies'
-
+    when /^the test game page$/ then '/game/test'
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

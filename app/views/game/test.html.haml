@@ -1,6 +1,7 @@
 %h1 Play a game
--[:player0, :player1].each do |player|
+-session[:players].each do |player|
   =player
+  =session[player][:health]
   %table#moves
     %tr
       - params[player][:left_hand].split("").each do |letter|
@@ -11,6 +12,7 @@
   %br
 
 =session[:player]
+
 =params[:move][:left_hand]
 =params[:move][:right_hand]
 %br
@@ -19,10 +21,10 @@ test
 =form_tag game_test_path do
 
   ='Left Hand:'
-  = select :move, :left_hand, hand_move_list(:left_hand)
+  = select :move, :left_hand, hand_move_list(session[:player], :left_hand, :right_hand)
   %br
   ='Right Hand:'
-  = select :move, :right_hand, hand_move_list(:right_hand)
+  = select :move, :right_hand, hand_move_list(session[:player], :right_hand, :left_hand)
   %br
   =submit_tag "Submit move"
 

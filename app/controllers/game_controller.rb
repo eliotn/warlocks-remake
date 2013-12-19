@@ -23,30 +23,23 @@ class GameController < ApplicationController
     redirect_to game_test_path
   end
   def update_game
-    [:player0, :player1].each do |player|
+    session[:players].each do |player|
       [:left_hand, :right_hand].each do |hand|
-        session[player][hand] << session[player][:move][hand][0]
+        session[player][hand] << session[player][:move][hand][0].upcase
+        session
       end
     end
     
   end
+  def cast_spell(spell_name)
+
+  end
   #push the variables in the session to the parameters
   def push_session
-    [:player0, :player1].each do |player|
+    session[:players].each do |player|
       params[player] = Hash.new()
       [:left_hand, :right_hand].each do |hand|
         params[player][hand] = session[player][hand]
-      end
-    end
-  end
-  def possible_moves(player, hand)
-    gestures = ['D','P','W','S','F']
-    spells = []
-    Sequence.all.each do |seq|
-      gestures.each do |ges|
-        if params[player][hand][-seq.sequence.length + 1, seq.sequence.length - 1] + ges  == seq.sequence
-          spells << gestures
-        end
       end
     end
   end
@@ -64,12 +57,13 @@ class GameController < ApplicationController
     params[:move] = Hash.new()
     params[:move][:left_hand] = ""
     params[:move][:right_hand] = ""
+    session[:players] = [:player0, :player1]
     session[:player] = :player0
-    session[:player0] = Hash.new()
-    session[:player1] = Hash.new()
-    [:player0, :player1].each do |player|
+    session[:players].each do |player|
+      session[player] = Hash.new()
+      session[player][:health] = 15
       [:left_hand, :right_hand].each do |hand|
-        session[player][hand] = ""
+        session[player][hand] = "B"
       end
     end
     

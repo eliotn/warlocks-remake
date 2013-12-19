@@ -7,6 +7,4 @@ Background: homepage has been added
   Given I am on the Warlocks Remake homepage
 
 Scenario: View main page
-  Then I should see "HELLO WORLD"
-  And I should see "Login"
-  And I should see "Games"
+  Then I should see "Welcome to the Warlocks Remake game!"
